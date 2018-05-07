@@ -4,8 +4,12 @@
   "description": "A simple Node.js implementation of a blockchain",
   "main": "index.js",
   "scripts": {
+    "start": "node --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Keenan Villani-Holland",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
 }
