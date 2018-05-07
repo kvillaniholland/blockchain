@@ -70,13 +70,13 @@ class Blockchain:
 
     def proofOfWork(self, lastProof):
         proof = 0
-        while self.validProof(lastProof, proof) is False:
+        while self.validProof(lastProof, proof, self.lastBlock) is False:
             proof += 1
         return proof
 
     @staticmethod
-    def validProof(lastProof, proof):
-        guess = f'{lastProof}{proof}'.encode()
+    def validProof(lastProof, proof, lastBlock):
+        guess = f'{lastProof}{proof}{lastBlock}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
 
